@@ -9,9 +9,9 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var carDetails = {
+var carDetails = {   // declares a variabel called carDetails
   color: 'red',
-  make: 'toyota',
+  make: 'toyota', // inside the variable is an array containing strings and numbers called a nested array
   model: 'tacoma',
   year: 1994
 }
@@ -21,8 +21,14 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
+// The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
 //Code Here
 
+var {color, make, model, year} = carDetails;
+
+console.log(color); //red
+console.log(make); //toyota
 
 
 ////////// PROBLEM 2 //////////
@@ -35,6 +41,8 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
+
+  var {firstName, lastName, title} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -55,6 +63,12 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation (obj) {
+  
+var {utah, california, texas, arizona} = obj;
+return utah + california + texas + arizona;
+}
+
 
 
 ////////// PROBLEM 4 //////////
@@ -68,6 +82,13 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+function ingredients (obj) {
+  const {carb, fat, protein} = obj
+  let letNewArr = []
+  letNewArr.push(carb, fat, protein);
+  return letNewArr;
+}
 
 
 
@@ -87,6 +108,10 @@ function greeting( obj ) {
 
 //Code Here
 
+function largeNumbers ({first, second, third}) {
+  return Math.min(first, second, third);
+}
+
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +123,20 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+function numberGroups (obj) {
+  let {a: a, b: b, c: c} = obj;
+
+  const longestArray = Math.max(a.length, b.length, c.length);
+
+  let arrays = [];
+  arrays.push(a, b, c);
+
+  for(let arr in arrays) {
+    if(arrays[arr].length === longestArray) {
+      return arrays[arr]; 
+    }
+  }
+}
 
 
